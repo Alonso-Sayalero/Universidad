@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Factores de Riesgo</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $('input').checkboxradio({
+                    icon: false
+                });
+            });
+        </script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body>
+        <div class="title-container">
+            <h1>Muertes por Factores de Riesgo</h1>
+        </div>
+        <div class="radio-button-container widget">
+            <fieldset>
+                <legend>Seleccione un Factor de Riesgo</legend>
+                <label for="radio-alcohol">Uso de Alcohol</label>
+                <input id="radio-alcohol" name="risk-radio" type="radio" value="DatosCSV/alcohol_use.csv" onclick="draw_graph();" checked>
+                <label for="radio-sex">Relaciones Sexuales Inseguras</label>
+                <input id="radio-sex" name="risk-radio" type="radio" value="DatosCSV/unprotected_sex.csv" onclick="draw_graph();">
+                <label for="radio-smoke">Fumar</label>
+                <input id="radio-smoke" name="risk-radio" type="radio" value="DatosCSV/smoking.csv" onclick="draw_graph();">
+            </fieldset>
+        </div>
+        <div class="main-container">
+            <div id="graph" class="left-container"></div>
+            <div class="right-container">
+                <div id="legend" class="legend"></div>
+            </div>
+        </div>
+        <div class="checkbox-container">
+            <fieldset>
+                <legend>Países elegibles</legend>
+                <label for="check-bangladesh">Bangladesh</label>
+                <input type="checkbox" value="bangladesh" name="checkbox-ban" id="check-bangladesh" onclick="draw_graph();">
+                <label for="check-colombia">Colombia</label>
+                <input type="checkbox" value="colombia" name="checkbox-col" id="check-colombia" onclick="draw_graph();">
+                <label for="check-egypt">Egipto</label>
+                <input type="checkbox" value="egypt" name="checkbox-egy" id="check-egypt" onclick="draw_graph();">
+                <label for="check-france">Francia</label>
+                <input type="checkbox" value="france" name="checkbox-fr" id="check-france" onclick="draw_graph();">
+                <label for="check-papua">Papua Nueva Guinea</label>
+                <input type="checkbox" value="papua" name="chekcbox-pap" id="check-papua" onclick="draw_graph();">
+                <label for="check-poland">Polonia</label>
+                <input type="checkbox" value="poland" name="checkbox-pol" id="check-poland" onclick="draw_graph();">
+                <label for="check-portugal">Portugal</label>
+                <input type="checkbox" value="portugal" name="checkbox-por" id="check-portugal" onclick="draw_graph();">
+                <label for="check-serbia">Serbia</label>
+                <input type="checkbox" value="serbia" name="checkbox-ser" id="check-serbia" onclick="draw_graph();">
+                <label for="check-uganda">Uganda</label>
+                <input type="checkbox" value="uganda" name="checkbox-uga" id="check-uganda" onclick="draw_graph();">
+                <label for="check-uk">Reino Unido</label>
+                <input type="checkbox" value="uk" name="checkbox-uk" id="check-uk" onclick="draw_graph();">
+                <label for="check-usa">Estados Unidos</label>
+                <input type="checkbox" value="usa" name="checkbox-usa" id="check-usa" onclick="draw_graph();">
+                <label for="check-uruguay">Uruguay</label>
+                <input type="checkbox" value="uruguay" name="checkbox-uru" id="check-uruguay" onclick="draw_graph();">
+            </fieldset>
+        </div>
+
+        <script type="text/javascript" src="script_grafico.js"></script>
+    </body>
+</html>
